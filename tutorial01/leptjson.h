@@ -1,21 +1,41 @@
 #ifndef LEPTJSON_H__
 #define LEPTJSON_H__
 
-typedef enum { LEPT_NULL, LEPT_FALSE, LEPT_TRUE, LEPT_NUMBER, LEPT_STRING, LEPT_ARRAY, LEPT_OBJECT } lept_type;
+#include <string>
 
-typedef struct {
-    lept_type type;
-}lept_value;
+namespace lept{
+    //使用enum class定义强类型枚举
+    enum class Type{
+        Null,
+        False,
+        True,
+        Number,
+        String,
+        Array,
+        Object
+    };
 
-enum {
-    LEPT_PARSE_OK = 0,
-    LEPT_PARSE_EXPECT_VALUE,
-    LEPT_PARSE_INVALID_VALUE,
-    LEPT_PARSE_ROOT_NOT_SINGULAR
-};
+    //JSON值的结构体
+    struct Value{
+        Type type;
 
-int lept_parse(lept_value* v, const char* json);
+        //构造函数
+        Value():type(Type::Null){}
+        explicit Value(Type t):type(t){}
+    };
 
-lept_type lept_get_type(const lept_value* v);
+    //解析错误码
+    enum ParseError{
+        ParseOk=0,
+        ParseExpectValue,
+        ParseInvalidValue,
+        ParseRootNotSingular
+    };
 
-#endif /* LEPTJSON_H__ */
+    //解析JSON字符串
+    int type_parse(Value* v,const std::string& json);
+
+    //获取JSON值的类型
+    Type get_type(const Value* v);
+}
+#endif
