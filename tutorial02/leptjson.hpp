@@ -1,8 +1,7 @@
-#ifndef LEPTJSON_H__
-#define LEPTJSON_H__
+#ifndef LEPTJSON_HPP__
+#define LEPTJSON_HPP__
 
 #include <string>
-
 namespace lept{
     //使用enum class定义强类型枚举
     enum class Type{
@@ -26,7 +25,8 @@ namespace lept{
         PARSE_OK=0,
         PARSE_INVALID_VALUE,
         PARSE_EXPECT_VALUE,
-        PARSE_ROOT_NOT_SINGULAR
+        PARSE_ROOT_NOT_SINGULAR,
+        PARSE_NUMBER_TOO_BIG
     };
 
     //解析JSON字符串

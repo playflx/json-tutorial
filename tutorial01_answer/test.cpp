@@ -23,12 +23,21 @@ namespace lept{
 
     #define EXPECT_EQ_INT(expect, actual) EXPECT_EQ_BASE((expect)==(actual),expect, actual, "%d")
 
+    #define TEST_ERROR(json) \
+        do {\
+            Value v;\
+            v.type = Type::FALSE;\
+            auto result = parse(v, json);\
+            EXPECT_EQ_INT(static_cast<int>(ParseResult::PARSE_INVALID_VALUE), static_cast<int>(result));\
+            EXPECT_EQ_INT(static_cast<int>(Type::NULL_), static_cast<int>(get_type(v)));\
+        }while(0)
+
     void test_parse_null(){
         Value v;
         v.type = Type::FALSE;
         auto result = parse(v, "null");
-//        EXPECT_EQ_INT(static_cast<int>(ParseResult::PARSE_OK), static_cast<int>(result));
-//        EXPECT_EQ_INT(static_cast<int>(Type::NULL_),static_cast<int>(get_type(v)));
+        EXPECT_EQ_INT(static_cast<int>(ParseResult::PARSE_OK), static_cast<int>(result));
+        EXPECT_EQ_INT(static_cast<int>(Type::NULL_),static_cast<int>(get_type(v)));
 
     }
 
@@ -49,6 +58,7 @@ namespace lept{
     }
 
     void test_parse_expect_value() {
+
         Value v;
 
         v.type = Type::FALSE;

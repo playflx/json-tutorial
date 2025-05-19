@@ -29,6 +29,16 @@ static int lept_parse_literal(lept_context* c, lept_value* v, const char* litera
     v->type = type;
     return LEPT_PARSE_OK;
 }
+static ParseResult parse_null(Context& c, Value& v){
+EXPECT(c,'n');
+if(c.json[0]!='u'||c.json[1]!='l'||c.json[2]!='l'){
+return ParseResult::PARSE_INVALID_VALUE;
+}
+c.json+=3;
+v.type=Type::NULL_;
+return ParseResult::PARSE_OK;
+}
+
 
 static int lept_parse_number(lept_context* c, lept_value* v) {
     const char* p = c->json;

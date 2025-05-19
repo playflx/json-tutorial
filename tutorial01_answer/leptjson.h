@@ -15,6 +15,7 @@ namespace lept{
     };
 
     struct Value{
+        double n;
         Type type;
     };
 
@@ -31,6 +32,9 @@ namespace lept{
 
     //获取值类型
     Type get_type(const Value& value);
+
+    //整数类型
+    double get_number(const Value& value);
 }
 
 

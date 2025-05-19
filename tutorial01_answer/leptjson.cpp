@@ -47,13 +47,17 @@ namespace lept{
     }
 
     static ParseResult parse_value(Context& c, Value& v){
-            switch (*c.json) {
-                case 't': return parse_true(c,v);
-                case 'f': return parse_false(c,v);
-                case 'n': return parse_null(c,v);
-                case '\0': return ParseResult::PARSE_EXPECT_VALUE;
-                default: return ParseResult::PARSE_INVALID_VALUE;
-            }
+        switch (*c.json) {
+            case 't': return parse_true(c,v);
+            case 'f': return parse_false(c,v);
+            case 'n': return parse_null(c,v);
+            case '\0': return ParseResult::PARSE_EXPECT_VALUE;
+            default: return ParseResult::PARSE_INVALID_VALUE;
+        }
+    }
+
+    static ParseResult parse_number(){
+
     }
 
     ParseResult parse(Value& v, const std::string& json){

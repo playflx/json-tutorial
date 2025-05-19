@@ -11,7 +11,7 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
 endif()
 
 # 添加库（假设 leptjson 是 C 源代码）
-add_library(leptjson STATIC leptjson.cpp)  # 修改5：显式声明为静态库
+add_library(leptjson STATIC leptjson.cpp ../tutorial02/leptjson.cpp ../tutorial01_answer/leptjson.h ../tutorial02/test.cpp ../tutorial01_answer/test.cpp)  # 修改5：显式声明为静态库
 
 # 添加测试可执行文件（注意：源文件改为 .cpp 后缀）
 add_executable(leptjson_test test.cpp)  # 修改6：C++ 源文件
