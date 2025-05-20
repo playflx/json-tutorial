@@ -30,7 +30,7 @@ namespace lept{
     };
 
     //解析JSON字符串
-    int type_parse(Value* v,const std::string& json);
+    ParseResult type_parse(Value* v,const std::string& json);
 
     //获取JSON值的类型
     Type get_type(const Value* v);

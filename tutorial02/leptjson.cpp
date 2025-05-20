@@ -87,14 +87,14 @@ namespace lept{
         if(*p=='.'){//检查小数点
             p++;
             if(!ISDIGIT(*p))//小数点后必须有数字
-                return PARSE_INVALID_VALUE;
+                return ParseResult::PARSE_INVALID_VALUE;
             for(p++; ISDIGIT(*p);++p);
         }
         if(*p=='e'||*p=='E'){//检查指数部分
             p++;
             if(*p=='+'||*p=='-')p++;
             if(!ISDIGIT(*p))
-                return PARSE_INVALID_VALUE;//指数后必须有数字
+                return ParseResult::PARSE_INVALID_VALUE;//指数后必须有数字
             for(p++; ISDIGIT(*p);p++);
 
         }

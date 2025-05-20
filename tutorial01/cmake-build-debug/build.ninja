@@ -61,6 +61,12 @@ build CMakeFiles/leptjson.dir/D_/clion/json/json-tutorial/tutorial02/leptjson.cp
   OBJECT_DIR = CMakeFiles\leptjson.dir
   OBJECT_FILE_DIR = CMakeFiles\leptjson.dir\D_\clion\json\json-tutorial\tutorial02
 
+build CMakeFiles/leptjson.dir/D_/clion/json/json-tutorial/tutorial02/test.cpp.obj: CXX_COMPILER__leptjson_Debug D$:/clion/json/json-tutorial/tutorial02/test.cpp || cmake_object_order_depends_target_leptjson
+  DEP_FILE = CMakeFiles\leptjson.dir\D_\clion\json\json-tutorial\tutorial02\test.cpp.obj.d
+  FLAGS = -Wall -Wextra -pedantic -g -fdiagnostics-color=always -Wno-gnu-anonymous-struct -Wno-c99-extensions -std=gnu++11
+  OBJECT_DIR = CMakeFiles\leptjson.dir
+  OBJECT_FILE_DIR = CMakeFiles\leptjson.dir\D_\clion\json\json-tutorial\tutorial02
+
 build CMakeFiles/leptjson.dir/D_/clion/json/json-tutorial/tutorial01_answer/test.cpp.obj: CXX_COMPILER__leptjson_Debug D$:/clion/json/json-tutorial/tutorial01_answer/test.cpp || cmake_object_order_depends_target_leptjson
   DEP_FILE = CMakeFiles\leptjson.dir\D_\clion\json\json-tutorial\tutorial01_answer\test.cpp.obj.d
   FLAGS = -Wall -Wextra -pedantic -g -fdiagnostics-color=always -Wno-gnu-anonymous-struct -Wno-c99-extensions -std=gnu++11
@@ -75,7 +81,7 @@ build CMakeFiles/leptjson.dir/D_/clion/json/json-tutorial/tutorial01_answer/test
 #############################################
 # Link the static library libleptjson.a
 
-build libleptjson.a: CXX_STATIC_LIBRARY_LINKER__leptjson_Debug CMakeFiles/leptjson.dir/leptjson.cpp.obj CMakeFiles/leptjson.dir/D_/clion/json/json-tutorial/tutorial02/leptjson.cpp.obj CMakeFiles/leptjson.dir/D_/clion/json/json-tutorial/tutorial01_answer/test.cpp.obj
+build libleptjson.a: CXX_STATIC_LIBRARY_LINKER__leptjson_Debug CMakeFiles/leptjson.dir/leptjson.cpp.obj CMakeFiles/leptjson.dir/D_/clion/json/json-tutorial/tutorial02/leptjson.cpp.obj CMakeFiles/leptjson.dir/D_/clion/json/json-tutorial/tutorial02/test.cpp.obj CMakeFiles/leptjson.dir/D_/clion/json/json-tutorial/tutorial01_answer/test.cpp.obj
   LANGUAGE_COMPILE_FLAGS = -Wall -Wextra -pedantic -g
   OBJECT_DIR = CMakeFiles\leptjson.dir
   POST_BUILD = cd .

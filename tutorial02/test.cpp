@@ -25,14 +25,14 @@ namespace lept{
         static void test_parse_null() {
             Value v;
             v.type = Type::FALSE;
-            EXPECT_EQ_INT(static_cast<int>(ParseResult::PARSE_OK), type_parse(&v, "null"));
+            EXPECT_EQ_INT(static_cast<int>(ParseResult::PARSE_OK), static_cast<int>(type_parse(&v, "null")));
             EXPECT_EQ_INT(static_cast<int>(Type::NULL_), static_cast<int>(get_type(&v)));
         }
 
         static void test_parse_true() {
             Value v;
             v.type = Type::FALSE;
-            EXPECT_EQ_INT(static_cast<int>(ParseResult::PARSE_OK), type_parse(&v, "true"));
+            EXPECT_EQ_INT(static_cast<int>(ParseResult::PARSE_OK), static_cast<int>(type_parse(&v, "true")));
             EXPECT_EQ_INT(static_cast<int>(Type::NULL_),static_cast<int>(get_type(&v)));
         }
 
@@ -104,7 +104,7 @@ namespace lept{
         }
 
         static void test_parse_root_not_singular() {
-            TEST_ERROR(ParseResult::PARSE_ROOT_NOT_SINGULAR, "null x");
+            TEST_ERROR(ParseResult::PARSE_ROOT_NOT_SINGULAR, "null");
 
 #if 0
             /* invalid number */
